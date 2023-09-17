@@ -25,61 +25,54 @@
 
     <main>
       <div class="card">
-        <picture class="card__image">
-          <source
-            media="(min-width: 59.375em)"
-            srcset="assets/images/illustration-sign-up-desktop.svg"
-          />
-          <img
-            src="assets/images/illustration-sign-up-mobile.svg"
-            alt="image-web-3-mobile"
-          />
-        </picture>
+        <div class="card-flex">
+          <picture class="card__image">
+            <source
+              media="(min-width: 600px)"
+              srcset="assets/images/illustration-sign-up-desktop.svg"
+            />
+            <img
+              src="assets/images/illustration-sign-up-mobile.svg"
+              alt="image-web-3-mobile"
+            />
+          </picture>
 
-        <div class="card__content">
-          <h1>Stay updated!</h1>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <div class="card__content">
+            <h1>Stay updated!</h1>
+            <p class="card-text">
+              Join 60,000+ product managers receiving monthly updates on:
+            </p>
 
-          <ul>
-            <li>
-              <img src="assets/images/icon-list.svg" alt="icon-list" />
-              <p>Product discovery and building what matters</p>
-            </li>
+            <ul class="card-list">
+              <li class="list-items">
+                <img src="assets/images/icon-list.svg" alt="icon-list" />
+                <p>Product discovery and building what matters</p>
+              </li>
 
-            <li>
-              <img src="assets/images/icon-list.svg" alt="icon-list" />
-              <p>Measuring to ensure updates are a success</p>
-            </li>
+              <li class="list-items">
+                <img src="assets/images/icon-list.svg" alt="icon-list" />
+                <p>Measuring to ensure updates are a success</p>
+              </li>
 
-            <li>
-              <img src="assets/images/icon-list.svg" alt="icon-list" />
-              <p>And much more!</p>
-            </li>
-          </ul>
+              <li class="list-items">
+                <img src="assets/images/icon-list.svg" alt="icon-list" />
+                <p>And much more!</p>
+              </li>
+            </ul>
 
-          <form>
-            <label for="text"> Email address</label>
-            <input type="text" placeholder="email@company.com" />
-            <button type="submit">Subscribe to monthly newsletter</button>
-          </form>
+            <form action="success.html">
+              <label for="text"> Email address</label>
+
+              <input type="text" placeholder="email@company.com" />
+              <small></small>
+
+              <button type="submit">Subscribe to monthly newsletter</button>
+            </form>
+          </div>
         </div>
 
         <!-- Sign-up form end -->
-        <!-- Success message start -->
-        <div class="card__pop-up">
-          <img src="assets/images/icon-success.svg" alt="icon-success" />
-
-          <h2>Thanks for subscribing!</h2>
-
-          <p>
-            A confirmation email has been sent to ash@loremcompany.com. Please
-            open it and click the button inside to confirm your subscription.
-          </p>
-
-          <button type="button">Dismiss message</button>
-        </div>
       </div>
-      <!-- Success message end -->
     </main>
   </body>
 </html>
