@@ -42,6 +42,10 @@ li {
 body {
   font-family: 'Roboto', sans-serif;
   margin-block-end: 3rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__image img {
@@ -111,6 +115,10 @@ form button:hover {
   background-color: var(--Tomato);
 }
 
+.hide {
+  display: none;
+}
+
 /* ----- MEDIA QEUERY ----- */
 @media (min-width: 600px) {
   body {
@@ -141,5 +149,49 @@ form button:hover {
   .card__content {
     margin-block-start: 0;
     padding-inline: 0;
+  }
+
+  .sucess {
+    max-width: 350px;
+    background-color: var(--White);
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+
+  .sucess__img {
+    margin-block-end: 1rem;
+  }
+
+  .sucess__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+
+  .sucess__content h1 {
+    color: var(--Dark-Slate-Grey);
+  }
+
+  .sucess__content p {
+    color: var(--Charcoal-Grey);
+    font-size: 13px;
+  }
+  .sucess__content p .user-email {
+    font-weight: bold;
+  }
+
+  .sucess__content button {
+    background-color: var(--Charcoal-Grey);
+    color: var(--White);
+    border: 0;
+    padding-block: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 300ms;
+  }
+
+  .sucess__content button:hover {
+    background-color: var(--Tomato);
+    color: var(--White);
   }
 }
