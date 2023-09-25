@@ -1,6 +1,5 @@
-const form = document.querySelector('#form')
 const input = document.querySelector('input')
-const small = document.querySelector('small')
+const error = document.querySelector('small')
 
 const card = document.querySelector('.card')
 const sucess = document.querySelector('.sucess')
@@ -10,27 +9,22 @@ const dismiss = document.getElementById('dismiss')
 
 const emailRegex = /([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w+/
 
-form.addEventListener('submit', (e) => {
-  let error = false
-  let validEmail = emailRegex.test(input.value)
+submit.addEventListener('click', () => {
+  let isValid = emailRegex.test(input)
 
-  if (!validEmail) {
-    small.textContent = ' Invalid  Email'
-    input.style.borderColor = ' hsl(4, 100%, 67%)'
-    error = true
-  } else {
-    error.textContent = ''
-    submit.addEventListener('click', () => {
-      card.classList.add('hide')
-      sucess.classList.remove('hide')
-    })
-    dismiss.addEventListener('click', () => {
-      card.classList.remove('hide')
-      sucess.classList.add('hide')
-    })
+  if (input.value === '') {
+    error.textContent = 'This field is required'
   }
+  if (!isValid) {
+    error.textContent = 'Invalid Email'
+  } else {
+    card.classList.add('hide')
+    dismiss.classList.remove('hide')
+    console.log(isValid)
 
-  if (error) {
-    e.preventDefault()
+    dismiss.addEventListener('click', () => {
+      dismiss.classList.add('hide')
+      card.classList.remove('hide')
+    })
   }
 })

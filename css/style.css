@@ -77,31 +77,31 @@ body {
   gap: 8px;
 }
 
-form {
+.form {
   margin-block-start: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-form label {
+.form label {
   margin-block-end: 10px;
 }
 
-form input {
+.form input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--Grey);
   outline: 0;
 }
 
-form small {
+.form small {
   font-size: 16px;
   color: var(--Tomato);
   margin-block-start: 5px;
   margin-block-end: 10px;
 }
 
-form button {
+.form button {
   border: 0;
   color: var(--White);
   background-color: var(--Dark-Slate-Grey);
@@ -111,7 +111,7 @@ form button {
   transition: all 300ms ease-in-out;
 }
 
-form button:hover {
+.form button:hover {
   background-color: var(--Tomato);
 }
 
