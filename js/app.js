@@ -7,24 +7,44 @@ const sucess = document.querySelector('.sucess')
 const submit = document.getElementById('submit')
 const dismiss = document.getElementById('dismiss')
 
+const userEmail = document.querySelector('.user-email')
+
 const emailRegex = /([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w+/
 
-submit.addEventListener('click', () => {
-  let isValid = emailRegex.test(input)
+const form = document.querySelector('.form')
+
+form.addEventListener('submit', (e) => {
+  let isValid = emailRegex.test(input.value)
+  e.preventDefault()
+
+  if (!isValid) {
+    error.textContent = 'Invalid Email'
+  } else {
+    isValidEmail()
+    error.textContent = ''
+  }
 
   if (input.value === '') {
     error.textContent = 'This field is required'
   }
-  if (!isValid) {
-    error.textContent = 'Invalid Email'
-  } else {
-    card.classList.add('hide')
-    dismiss.classList.remove('hide')
-    console.log(isValid)
-
-    dismiss.addEventListener('click', () => {
-      dismiss.classList.add('hide')
-      card.classList.remove('hide')
-    })
-  }
+  emailInput()
 })
+
+function isValidEmail() {
+  card.classList.add('hide')
+  sucess.classList.remove('hide')
+}
+
+function dismissBtn() {
+  sucess.addEventListener('click', () => {
+    card.classList.remove('hide')
+    sucess.classList.add('hide')
+  })
+}
+
+dismissBtn()
+
+function emailInput() {
+  const emailValue = input.value
+  userEmail.textContent = emailValue
+}
